@@ -1,0 +1,54 @@
+<div class="jumbotron text-center">
+        <!--  <h1>Login Page</h1>
+
+        <p>{{ message }}</p> -->
+    <div class="modal-content ">
+    <div class="modal-header bor-bot-0">
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button"  ng-click="cancel()">
+            <span aria-hidden="true">
+                ×
+            </span>
+        </button>
+        <h2 class="modal-title text-center text-capitalize text-danger" id="myModalLabel">
+            LOGIN
+        </h2>
+    </div>
+    <div class="modal-body">
+        <form name="dataform" novalidate class="loginForm">
+            <div class="form-group ">
+                <input type="email" class="form-control" name="email" ng-model="data.email" required ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" placeholder="Your Email Address"/>
+                        <p class="help-block color-red" ng-show="!isEmail && dataform.email.$dirty && dataform.email.$invalid && dataform.email.$error.required"> Required!</p>
+                        <p class="help-block color-red" ng-show="isEmail && dataform.email.$error.required"> Required!</p>
+                        <p class="help-block color-red" ng-show="dataform.email.$error.pattern">Not valid email!</p>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" ng-model="data.password" required type="password" placeholder="Your Password"/>
+                       <p class="help-block color-red" ng-show="!isPassword && dataform.password.$dirty && dataform.password.$invalid && dataform.password.$error.required"> Required!</p>
+                        <p class="help-block color-red" ng-show="isPassword && dataform.password.$error.required"> Required!</p>
+            </div>
+            <div class="form-group text-center">
+                <a class="text-danger" href="#">
+                    <small><strong>Forgot your password ?</strong></small>
+                </a>
+            </div>
+            <button class="btn btn-danger btn-block" ng-click="validate();login()">
+                LOGIN
+            </button>
+
+            <p class="text-center">
+                OR <span></span>
+            </p>
+            <button class="btn btn-primary btn-block text-capitalize" type="submit">
+                LOGIN WITH FACEBOOK
+            </button>
+            <div class="form-group text-center">
+                <h6 class="text-center">
+                    Haven't joined us yet?
+                </h6>
+                <a class="text-danger" href="#/register">
+                    <small><strong>Create my FREE profile!</strong></small>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
